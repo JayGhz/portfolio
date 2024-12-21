@@ -81,4 +81,20 @@ const techs = [
         }
     }
 
+    @media (max-width: 480px) {        
+        .tech-icon {
+            font-size: 1rem;
+        }
+        .flex {
+            flex-wrap: wrap;
+        }
+        .flex > div {
+            flex: 1 1 calc(100% / 6);
+            max-width: calc(100% / 4.5);
+        }
+        .flex > div:nth-last-child(2) {
+            margin-left: calc((100% - 2 * (100% / 4)) / 2);
+        }
+    }
+
 </style>
