@@ -41,7 +41,7 @@ const techs = [
 <div class="flex flex-wrap gap-4 mt-8">
     {techs.map((tech) => (
         <div
-            class="flex  text-gray-800 dark:text-white border-gray-300 items-center justify-center gap-2 p-4 text-base transition border dark:border-gray-600 focus-visible:ring-yellow-500/80 text-md group rounded-xl focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 k"
+            class="flex  text-gray-800 dark:text-white border-gray-300 items-center justify-center gap-2 p-4 text-base transition border dark:border-gray-600 text-md group rounded-xl"
         >
             <i class={`tech-icon ${tech.class}`} style={`font-size: 2rem; --hover-color: ${tech.hoverColor};`}></i>
         </div>
@@ -63,6 +63,22 @@ const techs = [
 
     html.dark div:hover .tech-icon {
         filter: drop-shadow(0 0 10px var(--hover-color)); 
+    }
+
+    @media (max-width: 768px) {
+        .tech-icon {
+            font-size: 1rem;
+        }
+        .flex {
+            flex-wrap: wrap;
+        }
+        .flex > div {
+            flex: 1 1 calc(100% / 6);
+            max-width: calc(100% / 6);
+        }
+        .flex > div:nth-last-child(2) {
+            margin-left: calc((100% - 2 * (100% / 5)) / 2);
+        }
     }
 
 </style>
